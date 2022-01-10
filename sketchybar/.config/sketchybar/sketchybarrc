@@ -17,9 +17,9 @@ sketchybar -m --bar height=26                                                   
 sketchybar -m --default updates=when_shown                                                     \
                         drawing=on                                                             \
                         cache_scripts=on                                                       \
-                        icon.font="Hack Nerd Font:Bold:16.0"                                   \
+                        icon.font="JetBrainsMono Nerd Font:Bold:16.0"                                   \
                         icon.color=0xffAFB2B8                                                  \
-                        label.font="Hack Nerd Font:Normal:14.0"                                \
+                        label.font="JetBrainsMono Nerd Font:Normal:14.0"                                \
                         label.color=0xffffffff
 
 ############## SPACE DEFAULTS ############## 
@@ -37,7 +37,7 @@ sketchybar -m --add       item           yabai_spaces left                      
                                                                                                \
               --add       item           space_template left                                   \
               --set       space_template icon.highlight_color=0xff579DC8                       \
-                                         label.font="Hack Nerd Font:Normal:15.0"               \
+                                         label.font="JetBrainsMono Nerd Font:Normal:15.0"               \
                                          drawing=off                                           \
                                          click_script="yabai -m space --focus \$NAME"          \
                                          lazy=off
