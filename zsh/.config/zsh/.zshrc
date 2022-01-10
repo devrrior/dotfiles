@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# Config provide by @ChrisAtMachine. Video where explain his config: https://www.youtube.com/watch?v=bTLYiNvRIVI
+
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -58,7 +61,9 @@ bindkey "^p" up-line-or-beginning-search # Up
 bindkey "^n" down-line-or-beginning-search # Down
 bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
-bindkey -r "^u"
+bindkey "^a" beginning-of-line # End of line
+bindkey "^e" end-of-line # End of line
+# bindkey -r "^u"
 bindkey -r "^d"
 
 # FZF 
@@ -77,8 +82,8 @@ autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # TODO Remove these
-setxkbmap -option caps:escape
-xset r rate 210 40
+# setxkbmap -option caps:escape
+# xset r rate 210 40
 
 # Speedy keys
 # xset r rate 210 40
@@ -96,3 +101,10 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # swap escape and caps
 # setxkbmap -option caps:swapescape
 
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]]; then
+    sketchybar -m --trigger brew_upgrade
+  fi
+}
