@@ -1,4 +1,4 @@
-lctrl + alt + cmd - return : open -n -a Alacritty
+lctrl + alt + cmd - return : open -n -a kitty
 # lctrl + alt + cmd - w : open -n -a Brave
 
 # focus window
