@@ -1,9 +1,7 @@
 # Dofiles
-![Demo1](https://user-images.githubusercontent.com/69869135/148819163-32dde71b-5165-4659-8652-de59f4b47ffa.png)
-![image](https://user-images.githubusercontent.com/69869135/148823277-17c67b1d-34a1-4552-a45b-7cb06e3bd4a6.png)
-
-
-![Demo2](https://user-images.githubusercontent.com/69869135/148820026-99ec3b99-89e2-4b36-909b-3c55c401aaec.png)
+![Demo1](https://user-images.githubusercontent.com/69869135/148832650-1ff273d8-8760-48c4-b1aa-05df0232b1c4.png)
+![Demo2](https://user-images.githubusercontent.com/69869135/148832763-ef6154fc-5790-4034-972c-ad04716390dd.png)
+![Demo3](https://user-images.githubusercontent.com/69869135/148832771-3bc0cd58-ad43-4e93-871f-0da6eeb1b026.png)
 
 ## Installing
 For installing you need to install `git` and `stow`
