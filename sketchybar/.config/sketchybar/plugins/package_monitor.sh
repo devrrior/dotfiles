@@ -13,7 +13,7 @@ update() {
     BREW='0'
     brewLIST=""
   else
-    BREW=$(echo "$brewLIST" | wc -l)
+    BREW=$(echo "$brewLIST" | wc -l | sed 's/ //g')
   fi
 
   DEFAULT="0"
