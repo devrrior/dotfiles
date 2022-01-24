@@ -62,6 +62,9 @@ yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" manage=off
+yabai -m rule --add app="^Kap$" manage=off
+yabai -m rule --add app="^DaVinci Resolve$" manage=off
 
 yabai -m config external_bar all:24:0
 # SPACEBAR_HEIGHT=$(spacebar -m config height)
