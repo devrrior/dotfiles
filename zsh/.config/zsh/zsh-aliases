@@ -54,6 +54,12 @@ alias mach_java_mode="export SDKMAN_DIR="$HOME/.sdkman" && [[ -s "$HOME/.sdkman/
 alias m="git checkout master"
 alias s="git checkout stable"
 
+# tmux
+alias tmux="tmux -f ~/.tmux.conf"
+
+# nvim -> vim
+alias vim=nvim
+
 # list directories and tree
 
 case "$(uname -s)" in
