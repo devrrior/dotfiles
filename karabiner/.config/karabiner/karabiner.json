@@ -454,14 +454,14 @@
                         ]
                     },
                     {
-                        "description": "Launch apps by right shift+letters.",
+                        "description": "Change Option + h/j/k/l to Arrows",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_shift"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -470,17 +470,17 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'"
+                                        "key_code": "left_arrow"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_shift"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -489,17 +489,17 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/System/Applications/Dictionary.app'"
+                                        "key_code": "down_arrow"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "e",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_shift"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -508,17 +508,17 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/System/Applications/TextEdit.app'"
+                                        "key_code": "up_arrow"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "f",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_shift"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -527,45 +527,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open ~"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open '/Applications/Safari.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open '/Applications/iTerm with Rosetta.app'"
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -591,6 +553,30 @@
                                             "left_control",
                                             "left_option"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map ctrl + [ to escape",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -920,7 +906,28 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "caps_lock"
+                        }
+                    ]
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
