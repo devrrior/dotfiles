@@ -35,3 +35,14 @@ function mach_java_mode() {
     export SDKMAN_DIR="$HOME/.sdkman"
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 }
+
+docker-compose-commands () {
+  local selected dp_commands
+  dp_commands=`echo "build up down" | tr ' ' '\n'`
+
+  selected=$(printf "$dp_commands" | fzf --prompt="docker-compose " -m -1 --reverse --height 50%)
+
+  [ -n "$BUFFER" ] || LBUFFER="docker-compose ${selected}";
+
+  zle reset-prompt
+}
