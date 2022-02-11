@@ -3,8 +3,7 @@
 # Config provide by @ChrisAtMachine. Video where explain his config: https://www.youtube.com/watch?v=bTLYiNvRIVI
 
 export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
-setopt appendhistory
+HISTFILE=~/.zsh_history setopt appendhistory
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
@@ -97,6 +96,6 @@ export BROWSER="brave"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # remap caps to escape
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
