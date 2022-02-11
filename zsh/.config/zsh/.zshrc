@@ -28,6 +28,7 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+zle -N docker-compose-commands 
 
 # Colors
 autoload -Uz colors && colors
@@ -65,6 +66,7 @@ bindkey "^a" beginning-of-line # End of line
 bindkey "^e" end-of-line # End of line
 # bindkey -r "^u"
 bindkey -r "^d"
+bindkey '^g' 'docker-compose-commands'
 
 # FZF 
 # TODO update for mac
@@ -101,10 +103,4 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # swap escape and caps
 # setxkbmap -option caps:swapescape
 
-function brew() {
-  command brew "$@" 
-
-  if [[ $* =~ "upgrade" ]]; then
-    sketchybar -m --trigger brew_upgrade
-  fi
-}
+alias luamake=/Users/fernando/workspace/lua-language-server/3rd/luamake/luamake
