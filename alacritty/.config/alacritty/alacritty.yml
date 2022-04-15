@@ -1,4 +1,4 @@
-background_opacity: 1
+window.opacity: 1
 colors:
   bright:
     black: '0x282a40'
@@ -23,15 +23,15 @@ colors:
     foreground: '0xc5c9de'
 font:
   bold:
-    family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
   normal:
-    family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
     style: Regular
-  size: 15
+  size: 16
 window:
   decorations: none
   padding:
