@@ -1,3 +1,5 @@
+export PATH="${PATH}:${HOME}/.local/bin"
+
 #!/bin/sh
 
 # Config provide by @ChrisAtMachine. Video where explain his config: https://www.youtube.com/watch?v=bTLYiNvRIVI
