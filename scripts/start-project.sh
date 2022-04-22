@@ -9,16 +9,16 @@ if [ -n "$SELECTED_PROJECTS" ]; then
 
     # Start each project without attaching
     for PROJECT in $SELECTED_PROJECTS; do
-        tmuxinator start "$PROJECT" --no-attach # force disable attaching
+        tmuxinator start "$PROJECT" #--no-attach # force disable attaching
     done
 
     # If inside tmux then select session to switch, otherwise just attach
-    if [ -n "$TMUX" ]; then
-        SESSION=$(tmux list-sessions -F "#S" | fzf --prompt="Session: ")
-        if [ -n "$SESSION" ]; then
-            tmux switch-client -t "$SESSION"
-        fi
-    else
-        tmux attach-session
-    fi
+    # if [ -n "$TMUX" ]; then
+    #     SESSION=$(tmux list-sessions -F "#S" | fzf --prompt="Session: ")
+    #     if [ -n "$SESSION" ]; then
+    #         tmux switch-client -t "$SESSION"
+    #     fi
+    # else
+    #     tmux attach-session
+    # fi
 fi
