@@ -1,4 +1,4 @@
-window.opacity: 1
+# Colors (Poimandres Storm)
 colors:
   # Default colors
   primary:
@@ -69,20 +69,3 @@ colors:
     cyan: "0x89ddff"
     magenta: "0xfcc5e9"
     white: "0xffffff"
-
-font:
-  bold:
-    family: JetBrainsMono Nerd Font
-    style: Regular
-  italic:
-    family: JetBrainsMono Nerd Font
-    style: Regular
-  normal:
-    family: JetBrainsMono Nerd Font
-    style: Regular
-  size: 15
-window:
-  decorations: none
-  padding:
-    x: 4
-    y: 4
