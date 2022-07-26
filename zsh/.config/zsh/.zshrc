@@ -31,6 +31,7 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 zle -N docker-compose-commands 
+zle -N select-repo-directory 
 
 # Colors
 autoload -Uz colors && colors
@@ -69,6 +70,7 @@ bindkey "^e" end-of-line # End of line
 # bindkey -r "^u"
 bindkey -r "^d"
 bindkey '^g' 'docker-compose-commands'
+bindkey '^p' 'select-repo-directory'
 
 # FZF 
 # TODO update for mac

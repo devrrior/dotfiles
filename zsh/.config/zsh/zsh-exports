@@ -13,6 +13,7 @@ export PATH="$PATH:./node_modules/.bin"
 eval "$(fnm env)"
 eval "$(zoxide init zsh)"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="${HOME}/.pyenv/shims:${PATH}"
 # eval "`pip completion --zsh`"
 
 

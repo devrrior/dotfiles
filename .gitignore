@@ -1,2 +1,7 @@
 __pycache__/
 zsh/.config/zsh/plugins/
+
+karabiner/.config/karabiner/assets/complex_modifications
+karabiner/.config/karabiner/automatic_backups
+zsh/.config/zsh/.zcompcache
+zsh/.config/zsh/.zcompdump

@@ -36,7 +36,7 @@ function mach_java_mode() {
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 }
 
-docker-compose-commands () {
+function docker-compose-commands () {
   local selected dp_commands
   dp_commands=`echo "build up down" | tr ' ' '\n'`
 
@@ -44,5 +44,11 @@ docker-compose-commands () {
 
   [ -n "$BUFFER" ] || LBUFFER="docker-compose ${selected}";
 
+  zle reset-prompt
+}
+
+function select-repo-directory () {
+  directory=$(ls -d ~/repos/* | fzf --reverse)
+  cd "$directory"
   zle reset-prompt
 }
