@@ -61,6 +61,11 @@ alias mux="tmuxinator"
 # nvim -> vim
 alias vim=nvim
 
+# alias gcc="gcc-13"
+# alias g++="g++-13"
+# alias cc="cc-13"
+# alias c++="c++-13"
+
 # list directories and tree
 
 case "$(uname -s)" in

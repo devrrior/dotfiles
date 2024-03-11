@@ -14,21 +14,27 @@ eval "$(fnm env)"
 eval "$(zoxide init zsh)"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
+export PATH="${HOME}/Library/Python/3.9/bin:${PATH}"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # eval "`pip completion --zsh`"
 
-
+export PATH="/opt/homebrew/opt/gcc/bin:$PATH"
+export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/fernando/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/fernando/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/fernando/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/fernando/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/Users/fernando/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/fernando/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/fernando/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/fernando/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
-
