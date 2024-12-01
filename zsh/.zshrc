@@ -1,3 +1,3 @@
-export ZDOTDIR=$HOME/.config/zsh
-source "$HOME/.config/zsh/.zshrc"
-export TERM=xterm-256color
+if [ -f "$HOME/.config/zsh/.zshrc" ]; then
+    source "$HOME/.config/zsh/.zshrc"
+fi

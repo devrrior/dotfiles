@@ -1,118 +1,51 @@
-export PATH="${PATH}:${HOME}/.local/bin"
+# ----------------------------------------
+# Zsh Configuration
+# ----------------------------------------
 
-#!/bin/sh
+# Load Zap configuration
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
-# Config provide by @ChrisAtMachine. Video where explain his config: https://www.youtube.com/watch?v=bTLYiNvRIVI
-
-export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
-setopt appendhistory
-
-# some useful options (man zshoptions)
-setopt autocd extendedglob nomatch menucomplete
-setopt interactive_comments
-stty stop undef		# Disable ctrl-s to freeze terminal.
-zle_highlight=('paste:none')
-
-# beeping is annoying
-unsetopt BEEP
-
-
-# completions
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-# zstyle ':completion::complete:lsof:*' menu yes select
-zmodload zsh/complist
-# compinit
-_comp_options+=(globdots)		# Include hidden files.
-
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-zle -N docker-compose-commands 
-zle -N select-repo-directory 
-
-# Colors
-autoload -Uz colors && colors
-
-# Useful Functions
-source "$ZDOTDIR/zsh-functions"
-
-# Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
-
+# ----------------------------------------
 # Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "hlissner/zsh-autopair"
-# zsh_add_completion "esc/conda-zsh-completion" false
-# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# More completions https://github.com/zsh-users/zsh-completions
+# ----------------------------------------
 
-# Key-bindings
-bindkey -s '^o' 'ranger^M'
-bindkey -s '^f' 'zi^M'
-bindkey -s '^s' 'ncdu^M'
-# bindkey -s '^n' 'nvim $(fzf)^M'
-# bindkey -s '^v' 'nvim\n'
-bindkey -s '^z' 'zi^M'
-bindkey '^[[P' delete-char
-bindkey "^p" up-line-or-beginning-search # Up
-bindkey "^n" down-line-or-beginning-search # Down
-bindkey "^k" up-line-or-beginning-search # Up
-bindkey "^j" down-line-or-beginning-search # Down
-bindkey "^a" beginning-of-line # End of line
-bindkey "^e" end-of-line # End of line
-# bindkey -r "^u"
-bindkey -r "^d"
-bindkey '^g' 'docker-compose-commands'
-bindkey '^p' 'select-repo-directory'
+# Load plugins using Zap
+plug "zsh-users/zsh-autosuggestions"        # Autosuggestions for commands
+plug "zap-zsh/supercharge"                  # Performance optimization for Zsh
+plug "zap-zsh/zap-prompt"                   # Enhanced Zsh prompt
+plug "zsh-users/zsh-syntax-highlighting"    # Syntax highlighting for commands
+plug "zap-zsh/vim"                          # Vim keybindings for Zsh
+plug "hlissner/zsh-autopair"                # Auto-closing of quotes and brackets
+plug "zap-zsh/exa"                          # Integration for `exa` (modern `ls`)
+plug "kutsan/zsh-system-clipboard"          # Clipboard support for Zsh
+plug "chivalryq/git-alias"                  # Useful Git aliases
+plug "wintermi/zsh-brew"                    # Brew package manager enhancements
+plug "zap-zsh/nvm"                          # Node Version Manager (NVM) integration
+plug "zap-zsh/fzf"                          # Fuzzy finder support (fzf)
 
-# FZF 
-# TODO update for mac
-[ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh 
-[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
-# [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-# [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+# ----------------------------------------
+# Completion System
+# ----------------------------------------
+
+# Load and initialize the Zsh completion system
+autoload -Uz compinit
 compinit
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
+# ----------------------------------------
+# Environment Variables
+# ----------------------------------------
 
-# TODO Remove these
-# setxkbmap -option caps:escape
-# xset r rate 210 40
+# Add directories to the PATH
+export PATH="$HOME/.cargo/bin:$PATH"        # Rust Cargo
+export PATH="$HOME/.jenv/bin:$PATH"         # JEnv for Java version management
+export PATH="$HOME/.pub-cache/bin:$PATH"    # Flutter Pub cache
 
-# Speedy keys
-# xset r rate 210 40
+# ----------------------------------------
+# Initialization
+# ----------------------------------------
 
-# Environment variables set everywhere
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
+# Initialize JEnv
+eval "$(jenv init -)"
 
-# For QT Themes
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-# remap caps to escape
-# setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
-
-alias luamake=/Users/fernando/workspace/lua-language-server/3rd/luamake/luamake
-
-# pnpm
-export PNPM_HOME="/Users/devrrior/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# Initialize Zoxide (smart directory jumping)
+eval "$(zoxide init zsh)"
